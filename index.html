@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>หีบแดนลับ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chonburi&family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans+Thai:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="stage-chip"><span class="label">ด่าน</span> <strong id="stage">1</strong></div>
+      <div class="gold" title="ทอง"><span class="coin" aria-hidden="true"></span><strong id="gold">0</strong></div>
+      <button class="chest-btn" id="chest-shortcut" type="button" aria-label="ไปที่หีบสมบัติ">
+        <span class="chest-icon" aria-hidden="true"></span><span id="chest-count">0</span>
+      </button>
+    </header>
+
+    <section class="boss-hud" aria-label="บอส">
+      <div class="boss-name" id="boss-name">ผู้นำมอท</div>
+      <div class="traits" id="boss-traits"></div>
+      <div class="bar boss-bar"><div class="fill" id="boss-fill"></div><span id="boss-hp-text">100.0%</span></div>
+      <div class="timer"><span class="hourglass" aria-hidden="true"></span><span id="timer">30</span></div>
+    </section>
+
+    <div class="arena">
+      <canvas id="arena" aria-label="สนามต่อสู้"></canvas>
+      <div class="banner" id="banner" hidden></div>
+    </div>
+
+    <section class="hero-hud" aria-label="ฮีโร่">
+      <div class="level-orb"><span class="label">เลเวล</span><strong id="hero-level">1</strong></div>
+      <div class="hero-bars">
+        <div class="bar hero-bar"><div class="fill" id="hero-fill"></div><span id="hero-hp-text">100/100</span></div>
+        <div class="bar xp-bar"><div class="fill" id="xp-fill"></div><span id="xp-text">0/20</span></div>
+      </div>
+    </section>
+
+    <section class="skill-panel" aria-label="สกิลที่ใช้อยู่">
+      <h2>สกิลที่ใช้อยู่</h2>
+      <div class="skills" id="skills"></div>
+      <div class="controls">
+        <button type="button" class="toggle" id="auto-skills" aria-pressed="true">ใช้สกิลอัตโนมัติ</button>
+        <button type="button" class="toggle" id="challenge">ท้าบอสต่อ</button>
+        <button type="button" class="speed" id="speed">x1</button>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="chests" aria-selected="true">หีบสมบัติ</button>
+      <button type="button" role="tab" data-tab="gear" aria-selected="false">อุปกรณ์</button>
+      <button type="button" role="tab" data-tab="bag" aria-selected="false">คลัง</button>
+      <button type="button" role="tab" data-tab="upgrades" aria-selected="false">ฝึกฝน</button>
+    </nav>
+    <section class="panel" id="panel" role="tabpanel"></section>
+  </div>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" id="modal-card" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

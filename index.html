@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow" id="role"></p>
+      <h1 id="name"></h1>
+      <p class="bio" id="bio"></p>
+      <div class="links" id="links"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <input type="search" id="search" placeholder="ค้นหาผลงาน..." aria-label="ค้นหาผลงาน">
+      <div class="filters" id="filters" role="tablist"></div>
+    </section>
+
+    <p class="count" id="count"></p>
+    <section class="grid" id="grid"></section>
+    <p class="empty" id="empty" hidden>ไม่พบผลงานที่ค้นหา</p>
+  </main>
+
+  <footer class="container footer" id="footer"></footer>
+
+  <dialog id="modal">
+    <button class="close" id="close" aria-label="ปิด">&times;</button>
+    <div id="modal-body"></div>
+  </dialog>
+
+  <script src="works.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
